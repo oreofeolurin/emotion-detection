@@ -45,8 +45,8 @@ async def make_recommedation(files: UploadFile= File(...)):
         outcome = get_song()
 
         file_name = f"static/{str(time.time())}.png"
-        Image.open(outcome["image"]).save(file_name)       
-        outcome["image"] = f"{base_url}/{file_name}"
+        Image.open(outcome["bounding_box_image"]).save(file_name)       
+        outcome["bounding_box_image"] = f"{base_url}/{file_name}"
     except Exception as error:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(error.args))
     finally:
