@@ -44,17 +44,6 @@ def get_song():
     song_item = songs_list[music_id]
     song_artists = song_item['track']['artists']
 
-    #    song = {
- #           'music_title':song_item['track']['name'],
-  #          'music_artists': [i['name'] for i in song_artists],
-   #         'music_link':song_item['track']['external_urls']['spotify'],
-    #        'music_preview_url':song_item['track']['preview_url'],
-     #       'class_of_emotion':cls[-1],
-      #      'confidence':round(confidence*100, 2),
-       #     'bounding_box_image':image}
-
-
-    
     song = {
             'music_title':song_item['track']['name'],
             'music_artists': [i['name'] for i in song_artists],
