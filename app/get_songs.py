@@ -42,13 +42,16 @@ def get_song():
     music_id = random.randint(0, num_songs-1)
 
     song_item = songs_list[music_id]
+    song_artists = song_item['track']['artists']
     
-    song = {'music_id':music_id,
+    song = {
             'music_title':song_item['track']['name'],
+            'music_artists': [i['name'] for i in song_artists],
             'music_link':song_item['track']['external_urls']['spotify'],
+            'music_preview_url':song_item['track']['preview_url'],
             'class_of_emotion':cls[-1],
             'confidence':round(confidence*100, 2),
-            'image':image}
+            'bounding_box_image':image}
 
 
     print("Done!")
